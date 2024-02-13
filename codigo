@@ -1,0 +1,23 @@
+pip install datasets
+
+import numpy as np
+
+from datasets import load_dataset
+
+dataset = load_dataset("mstz/heart_failure")
+
+data = dataset["train"]
+
+print(data)
+
+print(np.shape(data))
+
+print(data[0 : 229])
+
+# sacar el vector age del dataset
+edad = data['age']
+print(edad)
+
+#sacarle el promedio
+promedio_edad = np.mean(edad)
+print(promedio_edad)
